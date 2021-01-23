@@ -59,7 +59,7 @@ void String::str() {
   string s10 = "Goodbye";
   s10[2];        // returns 'o'
   s10[2] = 'x';  // s10: Goxdbye
-  s10[10];       // Undefined behavoir
+  s10[10];       // Undefined behaviour
 
   s10.at(2) = 'y';  // s10: Goydbye
   // s10.at(10);       // Throws exception out_of_range
