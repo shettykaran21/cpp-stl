@@ -13,7 +13,7 @@ void String::str() {
   */
 
   /* Member functions
-   * s.size(), s.length(), s.capacity, s.reserve(), s.shrink_to_fit(),
+   * s.size(), s.length(), s.capacity(), s.reserve(), s.shrink_to_fit(),
    * s.resize(), s.max_size(), s.clear(), s.empty() s.at(), s.front(), s.back(),
    * s.push_back(), s.pop_back() s.assign(), s.append(), s.insert(), s.replace()
    * s.erase(), s.c_str(). s.data(), s.get_allocator(), s.substr(), s.swap()
