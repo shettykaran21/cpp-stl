@@ -74,8 +74,9 @@ void String::str() {
   string s10 = "Goodbye";
   s10[2];        // returns 'o'
   s10[2] = 'x';  // s10: Goxdbye
-  s10[10];       // Undefined behaviour
+  s10[10];       // Undefined behaviour if index is out of range
 
+  s10.at(2);        // returns 'x'
   s10.at(2) = 'y';  // s10: Goydbye
   // s10.at(10);       // Throws exception out_of_range
 
