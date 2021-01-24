@@ -28,7 +28,6 @@ void String::str() {
   /* Modifiers
    * +=, s.append(), s.push_back(), s.assign(), s.insert(), s.erase(),
    * s.replace(), s.swap(), s.pop_back(), s.clear()
-   *
    */
 
   // ------------------------ Constructors -----------------------//
