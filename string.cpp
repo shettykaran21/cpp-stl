@@ -50,11 +50,12 @@ void String::str() {
 
   s9.size();        // returns 7 | length
   s9.length();      // returns 7 | length | Same as s9.size()
-  s9.capacity();    // returns 15 | size of storage space allocated to s9
+  s9.capacity();    // returns 15 | size of storage space allocated to s9 |
+                    // capacity >= size
   s9.reserve(100);  // space allocated to s9 is 100 chars | s9.capacity() == 100
   s9.reserve(5);    // s1: Goodbye
-                    // If capacity less than minimum is given as parameter, (15,
-                    // in this case) then s9.capacity() == 15
+                    // If capacity less than minimum (15, in this case) is given
+                    // as parameter, then s9.capacity() == 15
                     // reserve() changes only the capacity(), not the size()
   s9.shrink_to_fit();  // shrink capacity to minimum
                        // Same as reserve() with parameter less than minimum
@@ -64,10 +65,12 @@ void String::str() {
   s9.resize(12, 'x');  // s1: Goodbye\0\0xxx | s9.size() == 12
                        // s1.resize() changes s9.size()
                        // Also changes s9.capacity() if parameter is greater
-                       // original capacity
-  s9.max_size();       // returns max size of string
-  s9.clear();          // Clears the string
-  s9.empty();          // Check if string is empty
+                       // than original capacity
+  s9.resize(5);        // s1: Goodb | s9.size() == 5
+
+  s9.max_size();  // returns max size of string
+  s9.clear();     // Clears the string
+  s9.empty();     // Check if string is empty
 
   // ------------------------ Single element access ---------------------//
   // [], s.at(), s.front(), s.back(), s.push_front(), s.push_back()
