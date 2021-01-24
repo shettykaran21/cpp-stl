@@ -23,6 +23,11 @@ void Array::arr() {
   array<int, 8> a1 = {1, 2, 3, 4, 5, 6, 7, 8};
   array<int, 8> a2 = {8, 7, 6, 5, 4, 3, 2, 1};
 
+  a1.size();      // returns 8 | size of array
+  a1.max_size();  // returns 8 | max size of array
+                  // max_size & size are same for array
+  a1.empty();     // Check if string is empty
+
   // ------------------------ Single element access ---------------------//
   // [], a.at(), a.front(), a.back()
   a1[2];       // returns 2
