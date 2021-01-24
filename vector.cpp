@@ -16,8 +16,6 @@ void Vector::vec() {
    * v.assign(), v.insert()
    *
    * v.erase(), v.data(), v.get_allocator(), v.swap()
-   *
-   * v.copy(), v.find(), v.compare()
    */
 
   /* Modifiers
