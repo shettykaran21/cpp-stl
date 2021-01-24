@@ -74,16 +74,20 @@ void String::str() {
   s1 = "Dragon Land";
   string s11;
 
-  s11.assign(s1);           // s11: Dragon Land | s11 = s1
-  s11.assign(s1, 2, 4);     // s11: agon
-                            // (string_name, pos, size)
-  s11.assign("Wisdom");     // s11: Wisdom
-  s11.assign("Wisdom", 3);  // s11: Wis
-                            // (string, size)
-  s11.assign(s1, 3);        // s11: gon Land
-                            // (string_name, pos)
-  s11.assign(3, 'x');       // s11: xxx
-                            // (size, char) | char works with ASCII too
+  s11.assign(s1);        // s11: Dragon Land | s11 = s1
+  s11.assign(s1, 2);     // s11: agon Land
+                         // (string_name, pos)
+  s11.assign(s1, 2, 4);  // s11: agon
+                         // (string_name, pos, size)
+
+  s11.assign("Wisdom");        // s11: Wisdom
+  s11.assign("Wisdom", 3);     // s11: Wis
+                               // (string, size)
+  s11.assign("Wisdom", 2, 3);  // s11: sdo
+                               // (string, pos, size)
+
+  s11.assign(3, 'x');  // s11: xxx
+                       // (size, char) | char works with ASCII too
   s11.assign({'a', 'b', 'c', 'd', 'e', 'f'});  // s11: abcdef
   // append, insert and replace also has similar syntax
 
