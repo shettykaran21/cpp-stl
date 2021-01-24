@@ -6,14 +6,24 @@
 using namespace std;
 
 void String::str() {
-  // Points
-  // 1. If only one int parameter with string => (size)
-  // 2. If only one int parameter with string_name => (pos)
-  // 3. If two int parameters => (pos, size)
+  /* Points
+    1. If only one int parameter with string => (size)
+    2. If only one int parameter with string_name => (pos)
+    3. If two int parameters => (pos, size)
+  */
 
-  // Modifiers
-  // +=, s.append(), s.push_back(), s.assign(), s.insert(), s.erase(),
-  // s.replace(), s.swap(), s.pop_back(), s.clear()
+  /* Member functions
+   * s.size(), s.length(), s.capacity, s.reserve(), s.shrink_to_fit(),
+   * s.resize(), s.max_size(), s.clear(), s.empty() s.at(), s.front(), s.back(),
+   * s.push_back(), s.pop_back() s.assign(), s.append(), s.insert(), s.replace()
+   * s.erase(), s.c_str(). s.data(), s.get_allocator(), s.substr(), s.swap()
+   * s.copy(), s.find(), s.compare()
+   */
+
+  /* Modifiers
+   * +=, s.append(), s.push_back(), s.assign(), s.insert(), s.erase(),
+   * s.replace(), s.swap(), s.pop_back(), s.clear()
+   * */
 
   // ------------------------ Constructors -----------------------//
   string s1("Hello");          // s1: Hello
