@@ -7,20 +7,16 @@ using namespace std;
 
 void Vector::vec() {
   /* Member functions
+   *
    * v.size(), v.capacity(), v.reserve(), v.shrink_to_fit(),
-   * v.resize(), v.max_size(), v.clear(), v.empty()
+   * v.resize(), v.max_size(), v.empty()
    *
-   * v.at(), v.front(), v.back(), v.push_back(), v.pop_back(), v.emplace(),
-   * v.emplace_back()
+   * [], v.at(), v.front(), v.back(), v.data()
    *
-   * v.assign(), v.insert()
+   * v.assign(), v.insert(), v.push_back(), v.pop_back(), v.emplace(),
+   * v.emplace_back(), v.erase(), v.swap(), v.clear()
    *
-   * v.erase(), v.data(), v.get_allocator(), v.swap()
-   */
-
-  /* Modifiers
-   * v.assign(), v.insert(), v.erase(), v.clear(), v.swap(), v.emplace(),
-   * v.emplace_back(), v.push_back(), v.pop_back()
+   * v.get_allocator()
    */
 
   // ------------------------ Constructors -----------------------//
@@ -45,10 +41,13 @@ void Vector::vec() {
   vector<int> v7(a, a + sizeof(a) / sizeof(int));
 
   // ------------------------ Capacity -----------------------//
-  // v.size(), v.max_size(), v.reserve(), v.shrink_to_fit(),
-  // v.resize(), v.clear(), v.empty()
+  // v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
+  // v.shrink_to_fit(), v.empty()
+
+  v7 = {16, 2, 77, 29};
 
   v7.size();      // returns 4 | size of vector
+  v7.max_size();  // returns max size of vector
   v7.capacity();  // returns 4 (in this case) | size of storage space allocated
                   // to v7 | capacity >= size
   v7.reserve(100);  // space allocated to v7 is 100 chars | v7.capacity() == 100
@@ -66,13 +65,13 @@ void Vector::vec() {
                      // original capacity
   v7.resize(5);      // v7: {16, 2, 77, 29, 0} | v7.size() == 5
 
-  v7.max_size();  // returns max size of vector
-  v7.clear();     // Clears the vector
-  v7.empty();     // Check if vector is empty
+  v7.empty();  // Check if vector is empty
 
-  // ------------------------ Single element access ---------------------//
-  // [], s.at(), s.front(), s.back(), s.push_front(), s.push_back()
+  // ------------------------ Element access ---------------------//
+  // [], s.at(), s.front(), s.back()
+
   v7 = {1, 2, 3, 4, 5, 6};
+
   v7[2];       // returns 3
   v7[2] = 10;  // v7: {1, 2, 10, 4, 5, 6}
   v7[10];      // Undefined behaviour if index is out of range
@@ -81,22 +80,15 @@ void Vector::vec() {
   v7.at(2) = 12;  // v7: {1, 2, 12, 4, 5, 6}
   // v7.at(10);       // Throws exception out_of_range
 
-  v7.front();        // returns 1 | If empty, undefined behaviour
-  v7.back();         // returns 6 | If empty, undefined behaviour
-  v7.push_back(17);  // v7: {1, 2, 12, 4, 5, 6, 17}
-  v7.pop_back();     // returns & removes last element | v7: {1, 2, 12, 4, 5, 6}
-                     // If empty, undefined behaviour
+  v7.front();  // returns 1 | If empty, undefined behaviour
+  v7.back();   // returns 6 | If empty, undefined behaviour
 
-  // Advantage of emplace is, it does in-place insertion and avoids an
-  // unnecessary copy of object. For primitive data types, it does not matter
-  // which one we use. But for objects, use of emplace() is preferred for
-  // efficiency reasons.
-  v7.emplace_back(14);        // v7: {1, 2, 12, 4, 5, 6, 17, 14}
-  v7.emplace(v7.begin(), 4);  // v7: {4, 1, 2, 12, 4, 5, 6, 17, 14}
-                              // (pos, value)
+  v7.data();  // Returns a direct pointer to the memory array used internally by
+              // the vector to store its owned elements.
 
-  // -------------------------- Ranged access ----------------------- //
-  // v.assign(), v.insert()
+  // -------------------------- Modifiers ------------------------- //
+  // v.assign(), v.insert(), v.push_back(), v.pop_back(),  v.emplace(),
+  // v.emplace_back(), v.erase(), v.swap(), v.clear()
 
   // v.assign() => (size, value)
   v7 = {};
@@ -118,12 +110,26 @@ void Vector::vec() {
                                        // (pos, size, value)
   v7.insert(it, 2, 4);  // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40}
 
-  v7.erase(v7.begin());  // v7: {4, 17, 2, 3, 6, 7, 10, 20, 30, 40}
-  v7.erase(v7.begin(), v7.begin() + 2);  // v7: {2, 3, 6, 7, 10, 20, 30, 40}
+  v7.push_back(17);  // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40, 17}
+  v7.pop_back();     // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40}
+                     // returns & removes last element
+                     // If empty, undefined behaviour
 
-  // ----------------------- Others -------------------- //
-  v7 = {1, 2, 3, 4, 5, 6};
-  v7.data();  // Returns a direct pointer to the memory array used internally by
-              // the vector to store its owned elements.
+  // Advantage of emplace is, it does in-place insertion and avoids an
+  // unnecessary copy of object. For primitive data types, it does not matter
+  // which one we use. But for objects, use of emplace() is preferred for
+  // efficiency reasons.
+  v7.emplace_back(14);        // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40, 14}
+  v7.emplace(v7.begin(), 4);  // v7: {4, 4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40,
+                              // 14} (pos, value)
+
+  v7.erase(v7.begin());  // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40, 14}
+  v7.erase(v7.begin(), v7.begin() + 2);  // v7: {17, 2, 3, 6, 7, 10, 20, 30, 40}
+
   v7.swap(v6);
+
+  v7.clear();  // Clears the vector
+
+  // -------------------------- Others ------------------------- //
+  v7.get_allocator();
 }
