@@ -13,21 +13,19 @@ void String::str() {
   */
 
   /* Member functions
-   * s.size(), s.length(), s.capacity(), s.reserve(), s.shrink_to_fit(),
-   * s.resize(), s.max_size(), s.clear(), s.empty()
    *
-   * s.at(), s.front(), s.back(), s.push_back(), s.pop_back()
+   * s.size(), s.max_size(), s.length(), s.capacity(), s.reserve(),
+   * s.shrink_to_fit(), s.resize(), s.clear(), s.empty()
    *
-   * s.assign(), s.append(), s.insert(), s.replace()
+   * [], s.at(), s.front(), s.back()
    *
-   * s.erase(), s.c_str(), s.data(), s.get_allocator(), s.substr(), s.swap()
+   * +=, s.append(), s.push_back(), s.pop_back(), s.assign(), s.insert(),
+   * s.erase(), s.replace(), s.swap(), s.erase(), s.clear()
    *
-   * s.copy(), s.find(), s.compare()
-   */
-
-  /* Modifiers
-   * +=, s.append(), s.push_back(), s.assign(), s.insert(), s.erase(),
-   * s.replace(), s.swap(), s.pop_back(), s.clear()
+   * s.c_str(), s.data(), s.substr(), s.copy(), s.find(),
+   * s.compare()
+   *
+   * s.get_allocator()
    */
 
   // ------------------------ Constructors -----------------------//
@@ -43,6 +41,10 @@ void String::str() {
                                // (size, char) | char works with ASCII too
   string s6({'a', 'b', 'c'});  // s6: abc
 
+  // ---------------------- Iterators ---------------------- //
+  // s.begin(), s.end(), s.rbegin(), s.rend(), s.cbegin(), s.cend(),
+  // s.cebegin(), s.crend()
+
   // ------------------------ Capacity -----------------------//
   // s.size(), s.length(), s.max_size(), s.reserve(), s.shrink_to_fit(),
   // s.resize(), s.clear(), s.empty()
@@ -50,6 +52,7 @@ void String::str() {
 
   s9.size();        // returns 7 | length
   s9.length();      // returns 7 | length | Same as s9.size()
+  s9.max_size();    // returns max size of string
   s9.capacity();    // returns 15 | size of storage space allocated to s9 |
                     // capacity >= size
   s9.reserve(100);  // space allocated to s9 is 100 chars | s9.capacity() == 100
@@ -68,12 +71,10 @@ void String::str() {
                        // than original capacity
   s9.resize(5);        // s1: Goodb | s9.size() == 5
 
-  s9.max_size();  // returns max size of string
-  s9.clear();     // Clears the string
-  s9.empty();     // Check if string is empty
+  s9.empty();  // Check if string is empty
 
-  // ------------------------ Single element access ---------------------//
-  // [], s.at(), s.front(), s.back(), s.push_front(), s.push_back()
+  // ------------------------ Element access ---------------------//
+  // [], s.at(), s.front(), s.back()
   string s10 = "Goodbye";
   s10[2];        // returns 'o'
   s10[2] = 'x';  // s10: Goxdbye
@@ -83,13 +84,13 @@ void String::str() {
   s10.at(2) = 'y';  // s10: Goydbye
   // s10.at(10);       // Throws exception out_of_range
 
-  s10.front();         // returns 'G'
-  s10.back();          // returns 'e'
-  s10.push_back('z');  // s10: Goydbyez
-  s10.pop_back();      // retuns and removes last character | s10: Goydbye
+  s10.front();  // returns 'G'
+  s10.back();   // returns 'e'
 
-  // -------------------------- Ranged access ----------------------- //
-  // s.assign(), s.append(), s.insert(), s.replace()
+  // -------------------------- Modifiers ----------------------- //
+  // +=, s.append(), s.push_back(), s.pop_back(), s.assign(), s.insert(),
+  // s.replace(), s.erase(), s.swap(), s.erase(), s.clear()
+
   s1 = "Dragon Land";
   string s11;
 
@@ -110,19 +111,25 @@ void String::str() {
   s11.assign({'a', 'b', 'c', 'd', 'e', 'f'});  // s11: abcdef
   // append, insert and replace also has similar syntax
 
+  s11.push_back('g');  // s11: abcdfg
+  s11.pop_back();      // retuns and removes last character | s11: abcdef
+
   s11 = "Hello there";
   s11.erase(1, 4);  // s11: H there
                     // (pos, size)
 
-  // ----------------------- Others -------------------- //
+  s11.swap(s2);
+
+  s11.clear();  // Clears the string
+
+  // --------------------- Operations ------------------- //
+  // s.c_str(), s.data(), s.get_allocator(), s.substr(), s.copy(), s.find(),
+  // s.compare()
   s11 = "abcdef";
   s11.c_str();  // returns c string | "abcdef\0"
   s11.data();   // returns c string | "abcdef\0" | After c++11 both are same
   s11.substr(2, 4);  // returns cdef
-  s11.swap(s2);
 
-  // ---------------- Member function algorithms ------------ //
-  // s.copy(), s.find(), s.compare()
   // s.copy()
   string s12 = "abcdefg";
   char buf[20];
@@ -136,6 +143,7 @@ void String::str() {
 
   size_t found;
   found = s13.find("doing");             // found == 18
+  found = s13.rfind("doing");            // found == 36
   found = s13.find("doing", 20);         // found == 36
                                          // (string, pos)
   found = s13.find("doing well", 0);     // found == 36
@@ -156,6 +164,9 @@ void String::str() {
   s13.compare(s1);  // return +ve if s1 > s2 | -ve if s1 < s2 | 0 if s1 == s2
   s13.compare(3, 2, s1);  // (pos, size, string_name)
 
+  // -------------------------- Others ------------------------- //
+  s11.get_allocator();
+
   // ---------------- Non-Member function algorithms ------------ //
   string s14;
   // getline(cin, s14);       // default delimiter is '\n'
@@ -172,8 +183,4 @@ void String::str() {
 
   // ---------------- STL Algorithms ------------ //
   // search(), is_permutation(), replace(), transform(), rotate()
-
-  // --------------------- Iterators ---------------------- //
-  // s.begin(), s.end(), s.rbegin(), s.rend(), s.cbegin(), s.cend(),
-  // s.cebegin(), s.crend()
 }

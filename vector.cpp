@@ -8,7 +8,7 @@ using namespace std;
 void Vector::vec() {
   /* Member functions
    *
-   *  v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
+   * v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
    * v.shrink_to_fit(), v.empty()
    *
    * [], v.at(), v.front(), v.back(), v.data()
@@ -40,6 +40,10 @@ void Vector::vec() {
   int a[] = {16, 2, 77, 29};
   vector<int> v7(a, a + sizeof(a) / sizeof(int));
 
+  // --------------------- Iterators ---------------------- //
+  // v.begin(), v.end(), v.rbegin(), v.rend(), v.cbegin(), v.cend(),
+  // v.cebegin(), v.crend()
+
   // ------------------------ Capacity -----------------------//
   // v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
   // v.shrink_to_fit(), v.empty()
@@ -68,7 +72,7 @@ void Vector::vec() {
   v7.empty();  // Check if vector is empty
 
   // ------------------------ Element access ---------------------//
-  // [], s.at(), s.front(), s.back()
+  // [], v.at(), v.front(), v.back(), v.data()
 
   v7 = {1, 2, 3, 4, 5, 6};
 
@@ -86,7 +90,7 @@ void Vector::vec() {
   v7.data();  // Returns a direct pointer to the memory array used internally by
               // the vector to store its owned elements.
 
-  // -------------------------- Modifiers ------------------------- //
+  // --------------------- Modifiers ------------------------- //
   // v.assign(), v.insert(), v.push_back(), v.pop_back(),  v.emplace(),
   // v.emplace_back(), v.erase(), v.swap(), v.clear()
 
