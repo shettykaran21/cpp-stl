@@ -8,8 +8,8 @@ using namespace std;
 void Vector::vec() {
   /* Member functions
    *
-   * v.size(), v.capacity(), v.reserve(), v.shrink_to_fit(),
-   * v.resize(), v.max_size(), v.empty()
+   *  v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
+   * v.shrink_to_fit(), v.empty()
    *
    * [], v.at(), v.front(), v.back(), v.data()
    *
