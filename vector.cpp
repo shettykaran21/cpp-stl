@@ -24,15 +24,23 @@ void Vector::vec() {
    */
 
   // ------------------------ Constructors -----------------------//
-  vector<int> v1;              // empty vector of ints
-  vector<int> v2 = {1, 2, 3};  // Like arrays
-  vector<int> v3(4);           // vector of size 4
-  vector<int> v4(4, 100);      // vector of size 4 with value 100
-  vector<int> v5(v4.begin(),
-                 v4.end());  // iterating through v4
-  vector<int> v6(v5);        // a copy of v5
+  // Default constructor
+  vector<int> v1;  // empty vector of ints
 
-  // the iterator constructor can also be used to construct from arrays
+  // Initializer list constructor
+  vector<int> v2 = {1, 2, 3};  // Like arrays
+
+  vector<int> v3(4);       // vector of size 4
+  vector<int> v4(4, 100);  // vector of size 4 with value 100
+
+  // Iterator constructor
+  vector<int> v5(v4.begin(), v4.end());
+
+  // Copy constructor
+  vector<int> v6(v5);  // a copy of v5
+
+  // Range constructor (Iterator constructor can also be used to construct from
+  // arrays)
   int a[] = {16, 2, 77, 29};
   vector<int> v7(a, a + sizeof(a) / sizeof(int));
 
