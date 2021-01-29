@@ -10,8 +10,10 @@ void Array::arr() {
    *
    * a.size(), a.max_size(), a.empty()
    *
+   *
    * [], a.at(), a.front(), a.back(), a.data()
    *
+   * Modifiers
    * a.fill(), a.swap()
    */
 

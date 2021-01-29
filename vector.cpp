@@ -8,14 +8,18 @@ using namespace std;
 void Vector::vec() {
   /* Member functions
    *
+   * Capacity
    * v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
    * v.shrink_to_fit(), v.empty()
    *
+   * Element Access
    * [], v.at(), v.front(), v.back(), v.data()
    *
+   * Modifiers
    * v.assign(), v.insert(), v.push_back(), v.pop_back(), v.emplace(),
    * v.emplace_back(), v.erase(), v.swap(), v.clear()
    *
+   * Others
    * v.get_allocator()
    */
 

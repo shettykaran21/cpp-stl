@@ -14,17 +14,22 @@ void String::str() {
 
   /* Member functions
    *
+   * Capacity
    * s.size(), s.max_size(), s.length(), s.capacity(), s.reserve(),
    * s.shrink_to_fit(), s.resize(), s.clear(), s.empty()
    *
+   * Element Access
    * [], s.at(), s.front(), s.back()
    *
+   * Modifiers
    * +=, s.append(), s.push_back(), s.pop_back(), s.assign(), s.insert(),
    * s.erase(), s.replace(), s.swap(), s.erase(), s.clear()
    *
+   * Operations
    * s.c_str(), s.data(), s.substr(), s.copy(), s.find(),
    * s.compare()
    *
+   * Others
    * s.get_allocator()
    */
 
