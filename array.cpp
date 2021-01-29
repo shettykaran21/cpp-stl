@@ -14,6 +14,10 @@ void Array::arr() {
    * a.fill(), a.swap()
    */
 
+  // ---------------------- Iterators ---------------------- //
+  // a.begin(), a.end(), a.rbegin(), a.rend(), a.cbegin(), a.cend(),
+  // a.crbegin(), a.crend()
+
   // ---------------------- Capacity -----------------------//
   // a.size(), a.max_size(), a.empty()
 

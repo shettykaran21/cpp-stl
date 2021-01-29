@@ -43,7 +43,7 @@ void String::str() {
 
   // ---------------------- Iterators ---------------------- //
   // s.begin(), s.end(), s.rbegin(), s.rend(), s.cbegin(), s.cend(),
-  // s.cebegin(), s.crend()
+  // s.crbegin(), s.crend()
 
   // ------------------------ Capacity -----------------------//
   // s.size(), s.length(), s.max_size(), s.reserve(), s.shrink_to_fit(),

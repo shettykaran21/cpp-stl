@@ -42,7 +42,7 @@ void Vector::vec() {
 
   // --------------------- Iterators ---------------------- //
   // v.begin(), v.end(), v.rbegin(), v.rend(), v.cbegin(), v.cend(),
-  // v.cebegin(), v.crend()
+  // v.crbegin(), v.crend()
 
   // ------------------------ Capacity -----------------------//
   // v.size(), v.max_size(), v.resize(), v.capacity(), v.reserve(),
