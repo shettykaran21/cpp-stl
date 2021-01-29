@@ -6,6 +6,7 @@ using namespace std;
 
 void Array::arr() {
   /* Member functions
+   *
    * a.size(), a.max_size(), a.empty()
    *
    * [], a.at(), a.front(), a.back(), a.data()
