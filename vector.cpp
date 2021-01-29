@@ -110,6 +110,9 @@ void Vector::vec() {
                                        // (pos, size, value)
   v7.insert(it, 2, 4);  // v7: {4, 4, 17, 2, 3, 6, 7, 10, 20, 30, 40}
 
+  v7.erase(v7.begin());  // v7: {4, 17, 2, 3, 6, 7, 10, 20, 30, 40}
+  v7.erase(v7.begin(), v7.begin() + 2);  // v7: {2, 3, 6, 7, 10, 20, 30, 40}
+
   // ----------------------- Others -------------------- //
   v7 = {1, 2, 3, 4, 5, 6};
   v7.data();  // Returns a direct pointer to the memory array used internally by
