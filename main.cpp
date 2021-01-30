@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 
 #include "array.h"
+#include "map.h"
+#include "set.h"
 #include "string.h"
 #include "vector.h"
 
@@ -10,8 +12,17 @@ int main() {
   // String s;
   // s.str();
 
-  Array v;
-  v.arr();
+  // Array a;
+  // a.arr();
+
+  // Vector v;
+  // v.vec();
+
+  // Set se;
+  // se.s();
+
+  Map ma;
+  ma.m();
 
   return 0;
 }
