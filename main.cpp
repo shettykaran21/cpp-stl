@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 
 #include "array.h"
+#include "deque.h"
 #include "map.h"
 #include "set.h"
 #include "string.h"
@@ -21,8 +22,11 @@ int main() {
   // Set se;
   // se.s();
 
-  Map ma;
-  ma.m();
+  // Map ma;
+  // ma.m();
+
+  Deque de;
+  de.deq();
 
   return 0;
 }

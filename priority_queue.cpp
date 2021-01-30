@@ -9,18 +9,13 @@ void PriorityQueue::priorityQueue() {
   /* Member functions
    *
    * Capacity
-   * s.size(), s.max_size(), s.empty()
+   * p.size(), p.empty()
+   *
+   * Element Access
+   * p.top()
    *
    * Modifiers
-   * s.insert(), s.emplace, s.emplace_hint(), s.erase(), s.swap(), s.clear()
+   * p.push(), p.pop(), p.emplace(), p.swap()
    *
-   * Observers
-   * s.key_comp(), s.value_comp()
-   *
-   * Operations
-   * s.find(), s.count(), s.lower_bound(), s.upper_bound(), s.equal_range()
-   *
-   * Others
-   * s.get_allocator()
    */
 }
