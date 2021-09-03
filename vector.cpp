@@ -30,7 +30,7 @@ void Vector::vec() {
   // Initializer list constructor
   vector<int> v2 = {1, 2, 3};  // Like arrays
 
-  vector<int> v3(4);       // vector of size 4
+  vector<int> v3(4);       // vector of size 4 with value 0
   vector<int> v4(4, 100);  // vector of size 4 with value 100
 
   // Iterator constructor
