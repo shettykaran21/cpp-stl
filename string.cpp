@@ -188,4 +188,40 @@ void String::str() {
 
   // ---------------- STL Algorithms ------------ //
   // search(), is_permutation(), replace(), transform(), rotate()
+
+  // ---------------- <cctype> Character handling functions ----------//
+  // https://www.cplusplus.com/reference/cctype/
+
+  // isalnum() - Identify alphanumeric characters
+  // Returns 0 if not alphanumeric, else non-zero value
+
+  // isalpha() - Identify alphabets
+  // Returns 0 if not alphabet, else non-zero
+
+  // isblank() - Identify space (\t, ' ')
+  // Returns 0 if not blank, else non-zero
+
+  // isspace() - Identify white-space characters (\t, ' ', \n, \v, \f, \r)
+  // Returns 0 if not white-space, else non-zero
+
+  // ispunct() - Identify punctuations (Neither alphanumeric nor space)
+  // Returns 0 if punctuation, else non-zero
+
+  // iscntrl() - Identify control characters (\n, \b, \t, \r)
+  // Returns 0 if not control character, else non-zero
+
+  // isdigit() - Identify digit/number
+  // Returns 0 if not a number, else non-zero
+
+  // tolower(), toupper() - Convert character to lower/upper case
+  // islower(), isupper() - Identify lower/upper case letters
+
+  // ---------------- <string> ---------------//
+  // https://www.cplusplus.com/reference/string/
+
+  // stoi() - Convert string to integer
+  // to_string() - Convert numerical value to string
+
+  // ---------------- <cstring> (Not much useful in C++) --------------//
+  // https://www.cplusplus.com/reference/cstring/
 }

@@ -1,3 +1,4 @@
+// https://www.cplusplus.com/reference/algorithm/
 #include <bits/stdc++.h>
 
 using namespace std;
@@ -28,7 +29,7 @@ int main() {
   // Time complexity - O(nlogn)
   // By default, it uses QuickSort but if QuickSort is doing unfair partitioning
   // and taking more than N*logN time, it switches to HeapSort and when the
-  // vay size becomes really small, it switches to InsertionSort.
+  // array size becomes really small, it switches to InsertionSort.
   vector<int> v;
   v = {6, 3, 7, 5, 8};
   sort(v.begin(), v.end());  // {3, 5, 6, 7, 8}
@@ -92,8 +93,41 @@ int main() {
   // ------------------------------------------------------------------//
   // accumulate(), max_element(), min_element()
 
+  // accumulate()
+  // Time complexity - O(n)
+  v = {5, 10, 15};
+  int sum = 1;
+  accumulate(v.begin(), v.end(), sum);  // returns 31
+  accumulate(v.begin(), v.end(), sum,
+             [](int x, int y) { return x * y; });     // returns 750
+  accumulate(v.begin(), v.end(), sum, minus<int>());  // returns -29
+
+  // min_element()
+  // Time complexity - O(n)
+  v = {9, 4, 7, 2, 5, 10, 11, 12, 1, 3, 6};
+  min_element(v.begin(), v.end());  // returns iterator at element 1
+  min_element(v.begin(), v.end(),
+              less<int>());  // returns iterator at element 1
+
+  // max_element()
+  // Time complexity - O(n)
+  v = {9, 4, 7, 2, 5, 10, 11, 12, 1, 3, 6};
+  max_element(v.begin(), v.end());  // returns iterator at element 12
+  max_element(v.begin(), v.end(),
+              greater<int>());  // returns iterator at element 12
+
   // ------------------------------------------------------------------//
   // next_permutation()
+  // find next lexicographically greater value for given array of values
+  v = {1, 2, 3};
+  do {
+    cout << v[0] << " " << v[1] << " " << v[2] << "\n";
+  } while (next_permutation(v.begin(), v.end()));  // 1 2 3
+                                                   // 1 3 2
+                                                   // 2 1 3
+                                                   // 2 3 1
+                                                   // 3 1 2
+                                                   // 3 2 1
 
   // ------------------------------------------------------------------//
   // lower_bound(), upper_bound(), binary_search()
